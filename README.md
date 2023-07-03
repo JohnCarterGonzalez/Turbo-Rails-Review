@@ -52,6 +52,21 @@ Run the tests, to make sure everything works as expected:
 $ rails test
 ```
 
+To use it in one of your own projects, first create a rails app:
+```bash
+$ rails new your_app
+```
+
+Then in your `Gemfile`, include the path/to/repo and the `turbo_clone` gem:
+```ruby
+"turbo_clone" "path/to/repo"
+```
+
+And then execute:
+```bash
+$ bundle
+```
+
 Or install it yourself as:
 ```bash
 $ gem install turbo_clone
