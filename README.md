@@ -8,7 +8,7 @@ I work in the backend, I interact with Turbo all day. Here is my in-depth study
 at reading and writing software to become a better developer.
 
 ## Differences between TurboReview and Turbo Rails
-In no way do I claim to be a superior developer to the ones who built Turbo Rails. I have made some differences along the way to make it easier for me to understand.
+I have made some differences along the way to make it easier for me to understand.
 app/models/turbo_rails_review/streams/tag_builder.rb, line 19
 original:
 ```ruby
@@ -39,7 +39,7 @@ end
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "turbo_rails_review"
+gem "turbo_clone"
 ```
 
 And then execute:
@@ -47,13 +47,19 @@ And then execute:
 $ bundle
 ```
 
+Run the tests, to make sure everything works as expected:
+```bash
+$ rails test
+```
+
 Or install it yourself as:
 ```bash
-$ gem install turbo_rails_review
+$ gem install turbo_clone
 ```
 
 ## Contributing
-Contribution directions go here.
+This is simply a project I took up in my spare time to learn more of how the worker processes and background jobs of Hotwire and specifically turbo works. 
+If you see something that needs remeditation, open an issue and I will get back to you as soon as possible. 
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

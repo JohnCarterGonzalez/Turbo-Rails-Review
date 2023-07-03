@@ -1,11 +1,13 @@
 class TurboClone::Streams::TagBuilder
   include TurboClone::ActionHelper
 
+
   def initialize(view_context)
     @view_context = view_context
     @view_context.formats |= [:html]
   end
 
+  # replace method tag builder, generates the action fo replace
   def replace(target, content = nil, **rendering, &block)
     action :replace, target, content, **rendering, &block
   end
@@ -24,12 +26,14 @@ class TurboClone::Streams::TagBuilder
 
   private
 
+  # render html aprtial, and generate turbo stream tag 
   def action(name, target, content = nil, **rendering, &block)
     template = render_template(target, content, **rendering, &block) unless name == :remove
 
     turbo_stream_action_tag(name, target: target, template: template)
   end
 
+  # takes the target as an arg and delegates to view_context to render the partial
   def render_template(target, content = nil, **rendering, &block)
     if content
       content.respond_to?(:to_partial_path) ? @view_context.render(partial: content, formats: :html) : content
